@@ -1,0 +1,25 @@
+/* Puras fuentes */
+/* Inicio de sfpro */
+@font-face {
+    font-family: 'SFPro';
+    src: url(/recursos/fonts/SFPRODISPLAYBOLD.OTF);
+    font-weight: bold;
+    font-style: bold;
+}
+@font-face {
+    font-family: 'SFPro';
+    src: url(/recursos/fonts/SFPRODISPLAYBLACKITALIC.OTF);
+    font-weight: bolder;
+    font-style: italic;
+
+}
+/* fin de sfpro*/
+/* ----------------------- Fin de fuentes --------------------*/
+
+h2 {
+  font-family: 'SFPro', 'Times New Roman';
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 8vh;
+  color: #07e0ad;
+}
