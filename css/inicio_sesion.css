@@ -1,3 +1,5 @@
+@import url("styles_general.css");
+
 body{
     margin: 0;
     height: 100vh;
@@ -30,10 +32,11 @@ body::after {
   z-index: -1; /* detrás del contenido */
 }
 .formularios{
-    height: 100vh;
+    height: 100%;
     width: 70%;
     align-items: center;
     z-index: 1;
+    position: absolute; 
 }
 
 .cambioFormularios{
@@ -58,4 +61,69 @@ body::after {
     margin-top: -38.5%;
     margin-left: 16px;
     
+}
+.contentCrearCuenta{
+    height: 70%;
+    width: 70%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5px;
+    z-index: 3;
+}
+.btn-warning{
+    position: relative;
+    padding: 50px 40px;
+    font-size: 15px;
+    line-height: 1.5;
+    border-radius: 3px;
+    color: #fff;
+    background-color: var(--color_principal);
+    border: 0;
+    overflow: hidden;
+}
+.btn-warning input[type="file"]{
+    cursor: pointer;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    transform: scale(5);
+    opacity: 0;   
+}
+.btn-warning:hover{
+    background-color: red;
+}
+
+
+.botonIniciar{
+    width: 30%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 0);
+    right: 0;
+}
+.botonIniciar button{
+    background-color: #20c7a030;
+    width: 275px;
+    height: 275px;
+    border-radius: 150px;
+    font-family: 'SFPro';
+    font-weight: bold;
+    font-style: bold;
+    letter-spacing: 2px;
+    font-size: 7.5vh;
+    color: rgba(255, 255, 255, 0.459); 
+    border: 0px; 
+    box-shadow:inset 5px 2px 20px rgba(255, 255, 255, 0.189), inset 0px 2px 5px rgba(255, 255, 255, 0.422), 0px 2px 6px rgba(0, 0, 0, 0.066);
+    transition: 0.4s ease-in-out all;
+}
+.botonIniciar button:hover{
+    background-color: #20c7a065;
+    color: rgba(255, 255, 255, 0.639); 
+    box-shadow:inset 5px 2px 20px rgba(73, 233, 196, 0.372), inset 0px 2px 5px rgba(255, 255, 255, 0.422), 0px 2px 6px rgba(0, 0, 0, 0.066);
+
 }

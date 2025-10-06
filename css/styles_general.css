@@ -15,11 +15,15 @@
 }
 /* fin de sfpro*/
 /* ----------------------- Fin de fuentes --------------------*/
-
+/* ----------------------- Colores de la web -----------------*/
+:root{
+  --color_principal: #07e0ad;
+  --color_secundario: #20C7A0;
+}
 h2 {
   font-family: 'SFPro', 'Times New Roman';
   font-weight: bolder;
   font-style: italic;
   font-size: 8vh;
-  color: #07e0ad;
+  color: var(--color_principal);
 }
