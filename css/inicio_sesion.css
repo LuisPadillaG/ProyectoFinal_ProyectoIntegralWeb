@@ -1,45 +1,49 @@
 @import url("styles_general.css");
 
-body{
+body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(215deg,#1d665487,rgb(81, 216, 209));
+    background: linear-gradient(215deg, #1d665487, rgb(81, 216, 209));
     position: relative;
 }
+
 body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(2, 100, 77, 0.53), rgba(81, 248, 209, 0.412));
-  z-index: -2; /* más atrás todavía */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(2, 100, 77, 0.53), rgba(81, 248, 209, 0.412));
+    z-index: -2;
+    /* más atrás todavía */
 }
 
 body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 15%;
-  width: 70%;
-  height: 100%;
-  background-image: url("/recursos/img/logotipo.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 0.1;
-  z-index: -1; /* detrás del contenido */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 70%;
+    height: 100%;
+    background-image: url("/recursos/img/logotipo.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+    /* detrás del contenido */
 }
-.formularios{
+
+.formularios {
     height: 100%;
     width: 70%;
     align-items: center;
     z-index: 1;
-    position: absolute; 
+    position: absolute;
 }
 
-.cambioFormularios{
+.cambioFormularios {
     display: flex;
     flex-direction: row;
     height: 30%;
@@ -47,55 +51,164 @@ body::after {
     background-color: rgba(0, 0, 255, 0);
     align-items: center;
 }
-.crearCuenta, .iniciarSesion{
+
+.crearCuenta,
+.iniciarSesion {
     padding-left: 10%;
 }
-.iniciarSesion{
+
+.iniciarSesion {
     scale: 0.8;
     opacity: 0.6;
 }
-.iniciarSesion h2{
+
+.iniciarSesion h2 {
     color: #D8FFF6;
 }
-.crearCuenta :last-child, .iniciarSesion :last-child{
+
+.crearCuenta :last-child,
+.iniciarSesion :last-child {
     margin-top: -38.5%;
     margin-left: 16px;
-    
+
 }
-.contentCrearCuenta{
+
+.contentCrearCuenta {
     height: 70%;
-    width: 70%;
+    width: 40%;
     position: absolute;
-    left: 0;
+    left: 10%;
     bottom: 0;
     padding: 5px;
     z-index: 3;
+    background-color: #1d665400; 
+    display: none;
 }
-.btn-warning{
-    position: relative;
-    padding: 50px 40px;
-    font-size: 15px;
-    line-height: 1.5;
-    border-radius: 3px;
-    color: #fff;
-    background-color: var(--color_principal);
-    border: 0;
-    overflow: hidden;
-}
-.btn-warning input[type="file"]{
-    cursor: pointer;
+.contentIniciarSesion {
+    height: 70%;
+    width: 40%;
     position: absolute;
-    left: 0%;
-    top: 0%;
-    transform: scale(5);
-    opacity: 0;   
+    left: 10%;
+    bottom: 0;
+    padding: 5px;
+    z-index: 3;
+    background-color: #1d665400; 
 }
-.btn-warning:hover{
-    background-color: red;
+.picProfile_mas_nombre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upload{
+    width: 100px;
+    position: relative;
+    margin: auto;
+}
+.upload img{
+    padding: 10px;
+    border-radius: 50px;
+    border: 6px solid #eaeaea;
+    background-color: rgba(254, 254, 254, 0.066);
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    
+}
+.upload .round{
+    position: absolute;
+    bottom: 0;
+    right: -30px;
+    background-color: rgba(254, 254, 254, 0.066);
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    border-radius: 100%;
+    overflow: hidden;
+    
+}
+.upload .round input[type="file"] {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+
+}
+.upload .round input[type='file']{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+}
+input[type=file]::-webkit-file-upload-button{
+    cursor: pointer;
+}
+.inputGeneral{
+    width: 560px;
+    height: 60px;
+    background-color: #8f8f8f0a;
+    border: none;
+    border-radius: 30px;
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    outline: none;
+    padding-left: 30px;
+    color: #fefefe;
+    font-size: 16px;
+    font-family: 'SFPro';
+    font-weight: 400;
+    letter-spacing: 0.8px;
+}
+.inputNombre{
+    width: 400px;
+}
+.inputPIN{
+    width: 200px;
+}
+.inputGeneral::placeholder {
+    color: #fefefe;
+    opacity: 0.7;
+    font-size: 16px;
+    font-family: 'SFPro';
+    font-weight: 400;
+    letter-spacing: 0.8px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
-.botonIniciar{
+.botonIniciar {
     width: 30%;
     position: absolute;
     height: 100%;
@@ -104,9 +217,10 @@ body::after {
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 0, 0, 0);
-    right: 0;
+    right: 10%;
 }
-.botonIniciar button{
+
+.botonIniciar button {
     background-color: #20c7a030;
     width: 275px;
     height: 275px;
@@ -116,14 +230,29 @@ body::after {
     font-style: bold;
     letter-spacing: 2px;
     font-size: 7.5vh;
-    color: rgba(255, 255, 255, 0.459); 
-    border: 0px; 
-    box-shadow:inset 5px 2px 20px rgba(255, 255, 255, 0.189), inset 0px 2px 5px rgba(255, 255, 255, 0.422), 0px 2px 6px rgba(0, 0, 0, 0.066);
+    color: rgba(255, 255, 255, 0.459);
+    border: 0px;
+    box-shadow: inset 5px 2px 20px rgba(255, 255, 255, 0.189), inset 0px 2px 5px rgba(255, 255, 255, 0.422), 0px 2px 6px rgba(0, 0, 0, 0.066);
     transition: 0.4s ease-in-out all;
 }
-.botonIniciar button:hover{
-    background-color: #20c7a065;
-    color: rgba(255, 255, 255, 0.639); 
-    box-shadow:inset 5px 2px 20px rgba(73, 233, 196, 0.372), inset 0px 2px 5px rgba(255, 255, 255, 0.422), 0px 2px 6px rgba(0, 0, 0, 0.066);
 
+.botonIniciar button:hover {
+    background-color: #20c7a065;
+    color: rgba(255, 255, 255, 0.639);
+    box-shadow: inset 5px 2px 20px rgba(73, 233, 196, 0.372), inset 0px 2px 5px rgba(255, 255, 255, 0.422), 0px 2px 6px rgba(0, 0, 0, 0.066);
+
+}
+.animado {
+  animation: resaltado 4s infinite ease-in-out;
+}
+@keyframes resaltado {
+  0% {
+    fill: #07e0ad;
+  }
+  50% {
+    fill: #ffffff;
+  }
+  100% {
+    fill: #07e0ad;
+  }
 }
