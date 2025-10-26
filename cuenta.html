@@ -12,12 +12,12 @@
 
 <body>
     <section class="formularios">
-        <div class="cambioFormularios">
-            <div class="crearCuenta">
+        <div class="cambioFormularios" >
+            <div class="crearCuenta" onclick="FormularioCrearCuenta()">
                 <h2>Crear</h2>
                 <h2>Cuenta</h2>
             </div>
-            <div class="iniciarSesion">
+            <div class="iniciarSesion" onclick="FormularioIniciarSesion()">
                 <h2>Iniciar</h2>
                 <h2>&nbsp;Sesión</h2>
             </div>
@@ -49,8 +49,7 @@
         <input type="number" name="PIN" class="inputGeneral inputPIN" maxlength="4" oninput="if(this.value.length > 4) this.value = this.value.slice(0,4)"
             placeholder="PIN Privado 4 digitos"> 
     </section>
-    <section class="contentIniciarSesion">
-        
+    <section class="contentIniciarSesion"> 
         <br><br>
         <input id="username" name="correo" class="inputGeneral" type="email" placeholder="Inserte su correo" />
         <br><br><br>

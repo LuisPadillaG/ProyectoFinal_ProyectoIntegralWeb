@@ -5,6 +5,7 @@ body {
     height: 100vh;
     background: linear-gradient(215deg, #1d665487, rgb(81, 216, 209));
     position: relative;
+
 }
 
 body::before {
@@ -55,6 +56,7 @@ body::after {
 .crearCuenta,
 .iniciarSesion {
     padding-left: 10%;
+    cursor: pointer;
 }
 
 .iniciarSesion {
@@ -70,7 +72,7 @@ body::after {
 .iniciarSesion :last-child {
     margin-top: -38.5%;
     margin-left: 16px;
-
+    /*cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="%235AFFBD" stroke="%2318191A" stroke-width="2"></circle></svg>');*/
 }
 
 .contentCrearCuenta {
@@ -81,9 +83,10 @@ body::after {
     bottom: 0;
     padding: 5px;
     z-index: 3;
-    background-color: #1d665400; 
-    display: none;
+    background-color: #1d665400;
+    display: block;
 }
+
 .contentIniciarSesion {
     height: 70%;
     width: 40%;
@@ -92,19 +95,24 @@ body::after {
     bottom: 0;
     padding: 5px;
     z-index: 3;
-    background-color: #1d665400; 
+    background-color: #1d665400;
+    display: none;
 }
-.picProfile_mas_nombre{
+
+.picProfile_mas_nombre {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 30px;
 }
-.upload{
+
+.upload {
     width: 100px;
     position: relative;
     margin: auto;
 }
-.upload img{
+
+.upload img {
     padding: 10px;
     border-radius: 50px;
     border: 6px solid #eaeaea;
@@ -119,9 +127,10 @@ body::after {
         0px 2px 8px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(6px) saturate(110%);
     -webkit-backdrop-filter: blur(6px) saturate(100%);
-    
+
 }
-.upload .round{
+
+.upload .round {
     position: absolute;
     bottom: 0;
     right: -30px;
@@ -144,23 +153,27 @@ body::after {
     line-height: 33px;
     border-radius: 100%;
     overflow: hidden;
-    
+
 }
+
 .upload .round input[type="file"] {
     position: absolute;
     transform: scale(2);
     opacity: 0;
 
 }
-.upload .round input[type='file']{
+
+.upload .round input[type='file'] {
     position: absolute;
     transform: scale(2);
     opacity: 0;
 }
-input[type=file]::-webkit-file-upload-button{
+
+input[type=file]::-webkit-file-upload-button {
     cursor: pointer;
 }
-.inputGeneral{
+
+.inputGeneral {
     width: 560px;
     height: 60px;
     background-color: #8f8f8f0a;
@@ -184,12 +197,15 @@ input[type=file]::-webkit-file-upload-button{
     font-weight: 400;
     letter-spacing: 0.8px;
 }
-.inputNombre{
+
+.inputNombre {
     width: 400px;
 }
-.inputPIN{
+
+.inputPIN {
     width: 200px;
 }
+
 .inputGeneral::placeholder {
     color: #fefefe;
     opacity: 0.7;
@@ -198,14 +214,15 @@ input[type=file]::-webkit-file-upload-button{
     font-weight: 400;
     letter-spacing: 0.8px;
 }
-input[type=number]::-webkit-inner-spin-button, 
+
+input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 .botonIniciar {
@@ -242,17 +259,53 @@ input[type=number] {
     box-shadow: inset 5px 2px 20px rgba(73, 233, 196, 0.372), inset 0px 2px 5px rgba(255, 255, 255, 0.422), 0px 2px 6px rgba(0, 0, 0, 0.066);
 
 }
+
 .animado {
-  animation: resaltado 4s infinite ease-in-out;
+    animation: resaltado 4s infinite ease-in-out;
 }
+
+.formularioActual {
+    animation: formuActual 1.4s ease forwards;
+}
+
+.formularioSecundario {
+    animation: formuSecundario 1.4s ease forwards;
+}
+
+@keyframes formuActual {
+    0% {
+        scale: 0.8;
+        opacity: 0.6;
+    }
+
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes formuSecundario {
+    0% {
+        scale: 1;
+        opacity: 1;
+    }
+
+    100% {
+        scale: 0.8;
+        opacity: 0.6;
+    }
+}
+
 @keyframes resaltado {
-  0% {
-    fill: #07e0ad;
-  }
-  50% {
-    fill: #ffffff;
-  }
-  100% {
-    fill: #07e0ad;
-  }
+    0% {
+        fill: #07e0ad;
+    }
+
+    50% {
+        fill: #ffffff;
+    }
+
+    100% {
+        fill: #07e0ad;
+    }
 }
