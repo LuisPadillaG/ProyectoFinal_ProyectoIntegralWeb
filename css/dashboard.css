@@ -229,12 +229,12 @@ body {
 }
 .buttoncompletoCrearAlbum h4{
     position: absolute;
-    bottom: 0;
-    right: 10%;
-    color: white;
-    padding: 20px;
+    bottom: -5px;
+    right: 25%;
+    color: rgb(255, 255, 255);
+    padding: 10px;
     font-size: 1.5em;
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 15px 15px 15px 15px;
     background-color: rgba(11, 230, 164, 0.647);
     box-shadow:
         inset 4px 4px 15px rgba(255, 255, 255, 0.82),
@@ -246,7 +246,7 @@ body {
     0px 6px 25px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(16px) saturate(120%);
     -webkit-backdrop-filter: blur(16px) saturate(130%);
-    transform: translateX(100px);
+    width: 250px; 
 }
 .buttoncompletoCrearAlbum img{
     position: absolute;
@@ -266,14 +266,18 @@ body {
     -webkit-backdrop-filter: blur(16px) saturate(130%);
     border-radius: 150px;
     transition: 0.4s all ease-out;
+    z-index: 12;
 }
 .buttoncompletoCrearAlbum img:hover{
     transform: rotateZ(90deg);
+    z-index: 10;
 }
-.buttoncompletoCrearAlbum img:hover + h4  {
-    opacity: 1;
-    transform: translateX(0px);
-    width: auto;
+.descripcionButton{
+    opacity: 0;
+    transition: 0.4s all ease-out;
+}
+.buttoncompletoCrearAlbum img:hover + .descripcionButton {
+    opacity: 0.8;
 }
 /* fin de albumes y comienzo de privados */
 .contenidoPrivados{
@@ -344,5 +348,10 @@ input[type=number] {
 }
 /* fin de privados y comienzo de perfil*/
 .contenidoPerfil{
+    position: absolute;
+    width: 75%;
+    height: 100vh;
+    background-color: rgba(230, 8, 8, 0);
+    right: 0;
     display: none;
 }
