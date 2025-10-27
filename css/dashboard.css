@@ -1,16 +1,19 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(215deg, #eefcf987, rgb(250, 255, 255));
+    background: linear-gradient(215deg, #eefcf987, rgb(231, 231, 231));
     position: relative;
+    font-family: 'SFPro';
+    box-sizing: border-box;
 }
-.Navegacion{
+
+.Navegacion {
     position: absolute;
     top: 10%;
     left: 5%;
-    max-width: 300px;
+    width: 20%;
     height: 80%;
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(244, 244, 244);
     box-shadow:
         inset 1px 1px 5px rgba(255, 255, 255, 0.676),
         inset -1px -1px 5px rgba(255, 255, 255, 0.164),
@@ -21,5 +24,325 @@ body {
         0px 2px 8px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(6px) saturate(110%);
     -webkit-backdrop-filter: blur(6px) saturate(100%);
-    border-radius: 80px;
+    border-radius: 110px;
+    z-index: 3;
+}
+
+.Navegacion nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    list-style: none;
+    padding: 10px;
+}
+
+.Navegacion nav ul li {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logotipoBotonNavegacion {
+    display: flex;
+    justify-content: center;
+}
+
+.logotipoBotonNavegacion img {
+    width: 200px;
+
+}
+
+.perfilBotonNavegacion,
+.albumesBotonNavegacion,
+.privadosBotonNavegacion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(255, 0, 0, 0);
+    color: var(--color_principal);
+    font-size: 1.3em;
+}
+
+.perfilBotonNavegacion img {
+    width: 15%;
+    border-radius: 150px;
+}
+
+.botongeneralModoOscuroClaro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fondo_botongeneralModoOscuroClaro {
+    width: 50%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0px 14px 20px #4545451b;
+}
+
+.botonMovimiento_botongeneralModoOscuroClaro {
+    width: 50%;
+    height: 40px;
+    background-color: #20c7a097;
+    border-radius: 50px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.botonMovimiento_botongeneralModoOscuroClaro img {
+    height: 80%;
+}
+
+/*fin de la navegacion y comienzo de seccion albumes*/
+
+.contenidoAlbumes {
+    position: absolute;
+    width: 75%;
+    height: 100vh;
+    background-color: rgba(255, 0, 0, 0);
+    right: 0;
+    display: block;
+}
+
+.ContenedorContenidoAlbum {
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    box-sizing: border-box;
+    background-color: rgba(238, 130, 238, 0);
+    gap: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px; 
+    padding: 10px;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+}
+
+.TarjetaAlbum {
+    margin-top: 30px;
+    width: 30%;
+    min-width: 250px;
+    aspect-ratio: 1 / 1;
+    background-color: rgba(255, 0, 0, 0.086);
+    position: relative;
+    border-radius: 50px;
+    background-color: rgba(254, 254, 254, 0.066);
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    margin-left: 30px;
+}
+.TarjetaAlbum:hover .menuHamburguesaTarjetaAlbum{
+    display: block;
+    opacity: 1;
+}
+.colorTarjetaAlbum {
+    width: 20%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: #FF4545;
+    border-radius: 50px 0px 0px 50px;
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 0px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+}
+.menuHamburguesaTarjetaAlbum{
+    z-index: 10;
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    width: 40px;
+    opacity: 0;
+    transition: 0.2s all ease-in-out;
+}
+.contenidoTarjetaAlbum {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0);
+    border-radius: 0px 50px 50px 0px;
+    top: 0;
+    right: 0;
+}
+
+.imagenContenidoTarjetaAlbum {
+    position: absolute;
+    top: 13%;
+    left: 10%;
+    width: 75%;
+    aspect-ratio: 1 / 1;
+    background-image: url("/recursos/img/imagenPrueba.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.textoContenidoTarjetaAlbum {
+    font-size: 1.2em;
+    font-weight: 400;
+    font-style: normal;
+    color: #FF4545;
+    position: absolute;
+    bottom: 5%;
+    left: 22%;
+}
+.buttoncompletoCrearAlbum{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    z-index: 10;
+    background-color: red;
+}
+.buttoncompletoCrearAlbum h4{
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+    border-radius: 15px 0px 0px 15px;
+    background-color: rgba(11, 230, 164, 0.647);
+    box-shadow:
+        inset 4px 4px 15px rgba(255, 255, 255, 0.82),
+    inset -4px -4px 15px rgba(255, 255, 255, 0.22),
+    inset 4px 6px 4px rgba(255, 255, 255, 0.55),
+    inset 4px 4px 15px rgba(255, 255, 255, 0.45),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.22),
+    inset 15px 15px 40px rgba(255, 255, 255, 0.5),
+    0px 6px 25px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+    transform: translateX(100px);
+}
+.buttoncompletoCrearAlbum img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    background-color: rgba(11, 230, 164, 0.647);
+    box-shadow:
+        inset 4px 4px 15px rgba(255, 255, 255, 0.82),
+    inset -4px -4px 15px rgba(255, 255, 255, 0.22),
+    inset 4px 6px 4px rgba(255, 255, 255, 0.55),
+    inset 4px 4px 15px rgba(255, 255, 255, 0.45),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.22),
+    inset 15px 15px 40px rgba(255, 255, 255, 0.5),
+    0px 6px 25px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+    border-radius: 150px;
+    transition: 0.4s all ease-out;
+}
+.buttoncompletoCrearAlbum img:hover{
+    transform: rotateZ(90deg);
+}
+.buttoncompletoCrearAlbum img:hover + h4  {
+    opacity: 1;
+    transform: translateX(0px);
+    width: auto;
+}
+/* fin de albumes y comienzo de privados */
+.contenidoPrivados{
+    position: absolute;
+    width: 75%;
+    height: 100vh;
+    background-color: rgba(230, 8, 8, 0);
+    right: 0;
+    display: none;
+}
+.VerificacionContenidoPrivado{
+    position: absolute;
+    left: 2%;
+    top: 15px;
+    width: 95%;
+    height: 95vh;
+    background-color: rgba(244, 244, 244, 0.264);
+    box-shadow:
+        inset 4px 4px 15px rgba(255, 255, 255, 0.82),
+    inset -4px -4px 15px rgba(255, 255, 255, 0.22),
+    inset 4px 6px 4px rgba(255, 255, 255, 0.55),
+    inset 4px 4px 15px rgba(255, 255, 255, 0.45),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.22),
+    inset 15px 15px 40px rgba(255, 255, 255, 0.5),
+    0px 6px 25px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+    border-radius: 110px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.VerificacionContenidoPrivado h3{
+    color: var(--color_secundario);
+    font-size: 2em;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.VerificacionContenidoPrivado input{
+    height: 50px;
+    width: 300px;
+    background-color: #00000000;
+    border: none;
+    border-bottom: 5px solid var(--color_secundario);
+    color: var(--color_principal); 
+    transition: 0.3s all ease-in;
+    font-size: 3em;
+    letter-spacing: 1em;
+    text-align: center;
+    
+}
+.VerificacionContenidoPrivado input:focus{
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 5px solid var(--color_principal);
+    color: var(--color_principal); 
+}
+/* fin de privados y comienzo de perfil*/
+.contenidoPerfil{
+    display: none;
 }

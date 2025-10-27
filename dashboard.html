@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,65 @@
     <link rel="stylesheet" href="css/dashboard.css">
     <title>Dashboard</title>
 </head>
+
 <body>
     <header class="Navegacion">
         <nav>
             <ul>
-                <li><img src="recursos/img/logotipo.png" alt=""></li>
-                <li class="PerfilBoton">
-                    <img src="" alt="">
-                    Perfil
+                <li class="logotipoBotonNavegacion"><img src="recursos/img/logotipo.png" alt=""></li>
+                <li class="perfilBotonNavegacion" onclick="VisualizarPerfil()">
+                    <img src="recursos/img/plantilla_fotoprueba.png" alt="">Perfil
                 </li>
-                <li></li>
-                <li></li>
+                <li class="albumesBotonNavegacion" onclick="VisualizarAlbumes()">Albumes</li>
+                <li class="privadosBotonNavegacion" onclick="VisualizarPrivados()">Privados</li>
+                <li class="botongeneralModoOscuroClaro">
+                    <div class="fondo_botongeneralModoOscuroClaro">
+                        <div class="botonMovimiento_botongeneralModoOscuroClaro">
+                            <img src="recursos/img/sun_icon.png" alt="">
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
+    <section class="contenidoPerfil">
+        mi perfil pro
+    </section>
+    <section class="contenidoAlbumes">
+        <div class="ContenedorContenidoAlbum">
+            <div class="TarjetaAlbum">
+                <div class="colorTarjetaAlbum"></div>
+                <img class="menuHamburguesaTarjetaAlbum" src="recursos/img/burguer_menu_icon.png" alt="">
+                <div class="contenidoTarjetaAlbum">
+                    <div class="imagenContenidoTarjetaAlbum"></div>
+                    <h4 class="textoContenidoTarjetaAlbum">Recuerdos 2002</h4>
+                </div>
+            </div>
+        </div>
+        <div class="buttoncompletoCrearAlbum">
+            <h4>Crear Álbum</h4>
+            <img src="recursos/img/plus_icon.png" alt="">
+        </div>
+    </section>
+    <section class="contenidoPrivados">
+        <div class="VerificacionContenidoPrivado">
+            <h3>Ingrese su PIN de 4 digitos para ver su contenido</h3>
+            <input type="password" name="PIN" class="inputGeneral inputPIN" inputmode="numeric" pattern="\d{4}"
+                maxlength="4" minlength="4" required 
+                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4)">
+        </div>
+        <div class="ContenedorContenidoAlbum">
+            <div class="TarjetaAlbum">
+                <div class="colorTarjetaAlbum"></div>
+                <img class="menuHamburguesaTarjetaAlbum" src="recursos/img/burguer_menu_icon.png" alt="">
+                <div class="contenidoTarjetaAlbum">
+                    <div class="imagenContenidoTarjetaAlbum"></div>
+                    <h4 class="textoContenidoTarjetaAlbum">Recuerdos 2002</h4>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+<script src="/js/dashboard.js"></script>
+
 </html>

@@ -1,0 +1,86 @@
+body{
+    background: url("https://img.freepik.com/vector-gratis/fondo-rojo-navidad-copos-nieve-diseno-luces-bokeh_1048-14954.jpg") center center;
+    animation: anim 60s linear infinite;
+}
+@keyframes anim {
+    from{
+        background-position: 0% 0% ;
+    }
+    to{
+        background-position: 0% -1500%;
+    }
+}
+.wrapped{
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    overflow: hidden;
+    box-shadow: 0 6px 6px #00000033,
+        0 0 20px #0000001a;
+    transition: all 0.4 cubic-bezier(0.174, 0.895, 0.32, 2.2);
+}
+.effect {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    filter: url(#glass-distortion);
+    overflow: hidden;
+}
+.tint{
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background-color: #ffffff80;
+}
+.shine{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: inset 2px 2px 1px 0 #ffffff80,
+    inset -1px -1px 1px 1px #ffffff80;
+}
+.text{
+    z-index: 3;
+    font-size: 2rem;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+.wrapped{
+    display: flex;
+    gap: 25px;
+    flex: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+.dock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 2rem;
+    padding: 0.6rem;
+}
+.dock, .dock>div{
+    border-radius: 2rem;
+}
+.dock:hover{
+    padding: 0.8rem;
+    border-radius: 2.5rem;
+}
+.dock:hover>div{
+    border-radius: 2.5rem;
+}
+.dock img{
+    width: 75px;
+    padding: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+    cursor: pointer;
+}
+.dock img:hover{
+    transform: scale(0.95);
+    transform-origin: center;
+}
