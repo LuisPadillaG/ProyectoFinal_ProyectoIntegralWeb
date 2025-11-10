@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles_general.css">
+    <link rel="stylesheet" href="css/album_individual.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <header class="Navegacion">
+        <nav>
+            <ul>
+                <li class="logotipoBotonNavegacion"><img src="recursos/img/logotipo.png" alt=""></li>
+                <li class="perfilBotonNavegacion" onclick="IrDashboard('perfil')">
+                    <img src="recursos/img/plantilla_fotoprueba.png" alt="">Perfil
+                </li>
+                <li class="albumesBotonNavegacion" onclick="IrDashboard('albumes')">Albumes</li>
+                <li class="privadosBotonNavegacion" onclick="IrDashboard('privados')">Privados</li>
+                <li class="botongeneralModoOscuroClaro">
+                    <div class="fondo_botongeneralModoOscuroClaro" id="btnModo">
+                        <div class="botonMovimiento_botongeneralModoOscuroClaro">
+                            <img src="recursos/img/sun_icon.png" alt="">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="contenidoAlbumes">
+        <div class="ContenedorContenidoAlbum">
+            <div class="TituloAlbum">
+                <img class="TituloAlbumImagen" src="recursos/img/return_icon.png" alt=""
+                    onclick="IrDashboard('albumes')">
+                <h3>Recuerdos 2002 Titulo</h3>
+            </div>
+            <div class="InfoRecuerdo">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolor sunt ea? Pariatur hic nihil
+                    voluptatibus doloremque totam cum error quos, molestiae corrupti porro exercitationem laborum nobis
+                    voluptatem autem ullam.</p>
+            </div>
+            <div class="contenedorGrids">
+                <div class="gridFotosA">
+                    <div class="recuerdoIndividual TipoA_recuerdoUno">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto2.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoA_recuerdoDos">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto1.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoA_recuerdoTres">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto3.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoA_recuerdoCuatro">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto4.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoA_recuerdoCinco">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto6.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                </div>
+                <!---- opcion B de organización---->
+                <div class="gridFotosB">
+                    <div class="recuerdoIndividual TipoB_recuerdoUno">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto2.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoB_recuerdoDos">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto1.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoB_recuerdoTres">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto3.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoB_recuerdoCuatro">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto4.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoB_recuerdoCinco">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto5.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                </div>
+                <!---- opcion C de organización---->
+                <div class="gridFotosC">
+                    <div class="recuerdoIndividual TipoC_recuerdoUno">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto2.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoC_recuerdoDos">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto1.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoC_recuerdoTres">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto3.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoC_recuerdoCuatro">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto4.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                    <div class="recuerdoIndividual TipoC_recuerdoCinco">
+                        <img class="foto_recuerdo" src="recursos/img/cuentaPlantilla/foto5.jpg" alt="">
+                        <img class="emociones" src="/recursos/img/emociones/feliz.png" alt="">
+                        <img class="notebook" src="/recursos/img/emociones/notebook.png" alt="">
+                    </div>
+                </div>
+                <div class="CierreDeAlbum"></div>
+            </div>
+        </div>
+        
+        
+        </div>
+        <div class="buttoncompletoCrearAlbum">
+            <img src="recursos/img/plus_icon.png" alt="">
+            <h4 class="descripcionButton">Subir Foto</h4>
+        </div>
+    </section>
+    <!--Popups-->
+    <div class="PopUp_VisualizarFotoDeTurno">
+        <div class="PopUp_datosIndividual">
+            <img class="PopUp_FotografiaRecuerdo" src="recursos/img/cuentaPlantilla/foto1.jpg" alt="">
+            <div class="PopUp_emocionDescripcion">
+                <img class="PopUp_Emocion" src="recursos/img/emociones/love.png" alt="">
+                <h5 class="PopUp_descripcion">Esta es una descripcion de pocos caracteres no muy larga</h5>
+            </div>
+        </div>
+        <img class="TituloAlbumImagen closePopUp" src="recursos/img/return_icon.png" alt="">
+    </div>
+    </div>
+
+    <!---Subir fotos nuevas al deste--->
+    
+    <!---FIN Subir fotos nuevas al deste--->
+</body>
+<script src="js/album_individual.js"></script>
+
+</html>

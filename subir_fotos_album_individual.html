@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles_general.css">
+    <link rel="stylesheet" href="css/subir_fotos_album_individual.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <header class="Navegacion">
+        <nav>
+            <ul>
+                <li class="logotipoBotonNavegacion"><img src="recursos/img/logotipo.png" alt=""></li>
+                <li class="perfilBotonNavegacion" onclick="IrDashboard('perfil')">
+                    <img src="recursos/img/plantilla_fotoprueba.png" alt="">Perfil
+                </li>
+                <li class="albumesBotonNavegacion" onclick="IrDashboard('albumes')">Albumes</li>
+                <li class="privadosBotonNavegacion" onclick="IrDashboard('privados')">Privados</li>
+                <li class="botongeneralModoOscuroClaro">
+                    <div class="fondo_botongeneralModoOscuroClaro" id="btnModo">
+                        <div class="botonMovimiento_botongeneralModoOscuroClaro">
+                            <img src="recursos/img/sun_icon.png" alt="">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="contenidoAlbumes">
+        <div class="ContenedorContenidoAlbum">
+            <div class="TituloAlbum">
+                <img class="TituloAlbumImagen" src="recursos/img/return_icon.png" alt=""
+                    onclick="Regresar()">
+                <h3>Recuerdos 2002 Titulo</h3>
+            </div>
+            <div class="SubirFotos">
+                <label for="inputSubirFotos" class="DropArea">
+                    <p>Haz clic o arrastra tus fotos de recuerdo aquí</p>
+                    <input id="inputSubirFotos" type="file" accept="image/*" multiple>
+                </label>
+            </div>
+            <template id="plantilla-preview">
+                <div class="previewImagenIndividual">
+                    <img class="imagenPreview" src="" alt="">
+                    <div class="formulario">
+                        <div class="contenedorbotonEliminarPreview">
+                            <button class="botonEliminarPreview"><img src="recursos/img/close_icon.png" alt=""></button>
+                        </div>  
+                        <div class="emociones">
+                            <img class="emocion_individual emocionSeleccionada" value="enamorado" src="recursos/img/emociones/love.png" alt="">
+                            <img class="emocion_individual" value="feliz" src="recursos/img/emociones/feliz.png" alt="">
+                            <img class="emocion_individual" value="enojado" src="recursos/img/emociones/enojado.png" alt="">
+                            <img class="emocion_individual" value="sorprendido" src="recursos/img/emociones/sorprendido.png" alt="">
+                            <img class="emocion_individual" value="triste" src="recursos/img/emociones/triste.png" alt="">
+                        </div>
+                        <input id="description" name="descripcion" class="inputGeneral" type="text" placeholder="Nota breve"/>
+                    </div>
+                </div>
+            </template>
+            <div class="previewGaleria">
+            </div>
+            <div class="CierreDeAlbum"></div>
+        </div>
+
+
+        </div>
+        <div class="buttoncompletoCrearAlbum">
+            <img src="recursos/img/go_icon.png" alt="">
+            <h4 class="descripcionButton">Enviar</h4>
+        </div>
+    </section>
+</body>
+<script src="js/album_individual.js"></script>
+<script src="js/subir_fotos.js"></script>
+
+</html>

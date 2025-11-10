@@ -20,7 +20,7 @@
                 <li class="albumesBotonNavegacion" onclick="VisualizarAlbumes()">Albumes</li>
                 <li class="privadosBotonNavegacion" onclick="VisualizarPrivados()">Privados</li>
                 <li class="botongeneralModoOscuroClaro">
-                    <div class="fondo_botongeneralModoOscuroClaro">
+                    <div class="fondo_botongeneralModoOscuroClaro" id="btnModo">
                         <div class="botonMovimiento_botongeneralModoOscuroClaro">
                             <img src="recursos/img/sun_icon.png" alt="">
                         </div>
@@ -30,7 +30,15 @@
         </nav>
     </header>
     <section class="contenidoPerfil">
-        mi perfil pro
+        <div class="contenidoInternoPerfil">
+            <img class="fotopreviewPerfil" src="/recursos/img/plantilla_fotoprueba.png" alt="" width="100" height="100">
+            <div class="informacionPerfil">
+                <h3>Clara Generic User</h3>
+                <h3>claragenericmail@gmail.com</h3>
+                <button class="botonesPerfil" onclick="AbrirPopUp()">Editar datos de cuenta</button>
+                <button class="botonesPerfil">Salir de cuenta</button>
+            </div>
+        </div>
     </section>
     <section class="contenidoAlbumes">
         <div class="ContenedorContenidoAlbum">
@@ -52,7 +60,7 @@
         <div class="VerificacionContenidoPrivado">
             <h3>Ingrese su PIN de 4 digitos para ver su contenido</h3>
             <input type="password" name="PIN" class="inputGeneral inputPIN" inputmode="numeric" pattern="\d{4}"
-                maxlength="4" minlength="4" required 
+                maxlength="4" minlength="4" required
                 oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4)">
         </div>
         <div class="ContenedorContenidoAlbum contenidoInternoPrivado">
@@ -66,6 +74,49 @@
             </div>
         </div>
     </section>
+    <!--Popups-->
+    <div class="fondo_PopupActualizacionDatosCuenta">
+        <div class="PopupActualizacionDatosCuenta">
+            <div class="PopupActualizacionDatosCuenta_ladoIzquierdo">
+                <h2 class="ActualizarInfo">Actualizar datos de cuenta</h2>
+                <div class="upload">
+                    <img class="fotopreview" src="/recursos/img/usuario_predeterminado.png" alt="" width="100"
+                        height="100">
+                    <div class="round">
+                        <input type="file" id="subirFoto">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="animado"
+                                d="M14.8285 12.0259L16.2427 13.4402L12 17.6828L7.7574 13.4402L9.17161 12.0259L11 13.8544V6.31724H13V13.8544L14.8285 12.0259Z"
+                                fill="#20C7A0" />
+                            <path class="animado" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.7782 19.7782C15.4824 24.0739 8.51759 24.0739 4.22183 19.7782C-0.0739417 15.4824 -0.0739417 8.51759 4.22183 4.22183C8.51759 -0.0739419 15.4824 -0.0739419 19.7782 4.22183C24.0739 8.51759 24.0739 15.4824 19.7782 19.7782ZM18.364 18.364C14.8492 21.8787 9.15076 21.8787 5.63604 18.364C2.12132 14.8492 2.12132 9.15076 5.63604 5.63604C9.15076 2.12132 14.8492 2.12132 18.364 5.63604C21.8787 9.15076 21.8787 14.8492 18.364 18.364Z"
+                                fill="#07e0ad" />
+                        </svg>
+                    </div>
+                </div>
+                <input id="username" name="nombre" class="inputGeneral inputNombre" type="text"
+                    placeholder="Nuevo nombre de usuario" />
+                <input type="password" name="PIN" class="inputGeneral inputPIN" inputmode="numeric" pattern="\d{4}"
+                    maxlength="4" minlength="4" required placeholder="PIN Privado Anterior"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4)">
+                <input type="password" name="PIN" class="inputGeneral inputPIN" inputmode="numeric" pattern="\d{4}"
+                    maxlength="4" minlength="4" required placeholder="Nuevo PIN Privado"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4)">
+            </div>
+            <div class="PopupActualizacionDatosCuenta_ladoDerecho">
+                <button class="botonActualizar" onclick="ActualizarDatos()">
+                    ACTUALIZAR
+                </button>
+                <img src="recursos/img/close_icon.png" alt="" class="cerrarPopUp" onclick="CerrarPopUp()">
+            </div>
+        </div>
+        <div class="fondo_Popup_DatosActualizadosCorrectamente">
+            <div class="Popup_DatosActualizadosCorrectamente">
+                <h2 class="Popup_DatosActualizadosCorrectamente_h2">Sus datos han sido actualizados</h2>
+            </div>
+            <h5 class="NotaPopUp">Presione cualquier lugar para cerrar</h5>
+        </div>
+    </div>
 </body>
 <script src="/js/dashboard.js"></script>
 

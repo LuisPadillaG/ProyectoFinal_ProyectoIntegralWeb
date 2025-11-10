@@ -1,3 +1,9 @@
+@view-transition{
+    navigation: auto;
+}
+::view-transition-group(*){
+    animation-duration: 2s;
+}
 body {
     margin: 0;
     height: 100vh;
@@ -5,8 +11,25 @@ body {
     position: relative;
     font-family: 'SFPro';
     box-sizing: border-box;
+    transition: 0.8s ease;
 }
-
+body::after{
+  content: "";
+  position: fixed;          /* fijado a la ventana */
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0 */
+  pointer-events: none;     /* que no bloquee clics */
+  z-index: 0;               /* por debajo del contenido (ver nota) */
+  opacity: 0;               /* invisible por defecto */
+  transition: opacity 0.2s ease; /* aquí está la animación suave */
+  background: linear-gradient(215deg, #0b0b0b 10%, #1d1d1d 100%); /* gradiente oscuro */
+}
+header, section {
+  position: relative; /* para poder usar z-index si no lo tienen */
+  z-index: 1;
+}
+body.modo-oscuro::after{
+  opacity: 1;
+}
 .Navegacion {
     position: absolute;
     top: 10%;
@@ -25,7 +48,22 @@ body {
     backdrop-filter: blur(6px) saturate(110%);
     -webkit-backdrop-filter: blur(6px) saturate(100%);
     border-radius: 110px;
-    z-index: 3;
+
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+
+}
+body.modo-oscuro .Navegacion {
+    background: linear-gradient(215deg, #252525 10%, #1d1d1d 100%);
+   box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(110%);
 }
 
 .Navegacion nav ul {
@@ -101,12 +139,15 @@ body {
         inset 1px 1px 2px rgba(255, 255, 255, 0.164),
         inset 5px 5px 15px rgba(255, 255, 255, 0.454),
         0px 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease
 }
 
 .botonMovimiento_botongeneralModoOscuroClaro img {
     height: 80%;
 }
-
+.modo-oscuro .botonMovimiento_botongeneralModoOscuroClaro {
+    transform: translateX(55px);
+}
 /*fin de la navegacion y comienzo de seccion albumes*/
 
 .contenidoAlbumes {
@@ -218,7 +259,7 @@ body {
     color: #FF4545;
     position: absolute;
     bottom: 5%;
-    left: 22%;
+    left: 10%;
 }
 .buttoncompletoCrearAlbum{
     position: absolute;
@@ -354,4 +395,347 @@ input[type=number] {
     background-color: rgba(230, 8, 8, 0);
     right: 0;
     display: none;
+}
+.contenidoInternoPerfil{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0);
+    flex-direction: column;
+    gap: 50px;
+}
+.contenidoInternoPerfil h3{
+    padding: 0;
+    margin: 0;
+}
+.fotopreviewPerfil{
+    margin-top: 5%;
+}
+.fotopreviewPerfil{
+    padding: 10px;
+    border-radius: 150px;
+    border: 6px solid #acacac23;
+    background-color: rgba(200, 200, 200, 0.066);
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+}
+.informacionPerfil{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 30px;
+    padding: 100px;
+    border-radius: 250px;
+    border: 6px solid #acacac23;
+    background-color: rgba(200, 200, 200, 0.066);
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    justify-content: center;
+    align-items: center;
+}
+.informacionPerfil h3, .informacionPerfil button{
+    background-color: none;
+    color: var(--color_principal);
+    font-family: 'SFPro';
+    font-weight: 400;
+    font-style: normal;
+    border: none;
+    font-size: 1.4em;
+    transition: 0.4s;
+}
+.informacionPerfil button{
+    font-family: 'SFPro';
+    font-weight: 300;
+    font-style: italic;
+}
+.informacionPerfil h3:hover, .informacionPerfil button:hover{
+    color: var(--color_secundario);
+}
+.botonesPerfil{
+    background-color: #00000000;
+    transition: 0.4s ease-in-out;
+    border-radius: 30px;
+    padding:3px 30px 3px 30px;
+}
+.botonesPerfil:hover{
+    background-color: #00000010; 
+}
+.fondo_PopupActualizacionDatosCuenta{
+    z-index: 11;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.842);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+} 
+.fondo_Popup_DatosActualizadosCorrectamente{
+    position: absolute;
+    z-index: 12;
+    background-color: rgba(255, 255, 255, 0.863);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modo-oscuro .fondo_Popup_DatosActualizadosCorrectamente{
+    background-color: rgb(33, 33, 33);
+}
+.fondo_Popup_DatosActualizadosCorrectamente h2{
+    background-color: #c6ece350;
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+    padding: 50px 260px;
+    border-radius: 150px;
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    font-size: 5vh;
+}
+.NotaPopUp{
+    position: absolute;
+    bottom: 30%;
+    color: var(--color_secundario);
+    opacity: 0;
+    transition: 0.5s;
+}
+.modo-oscuro .fondo_PopupActualizacionDatosCuenta {
+    background-color: rgba(34, 34, 34, 0.737);
+}
+.PopupActualizacionDatosCuenta{
+    z-index: 12;
+    width: 80%;
+    height: 80%;
+    border-radius: 100px;
+    background-color: #88deca8a;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+}
+.PopupActualizacionDatosCuenta_ladoIzquierdo{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 30px;
+    padding: 5%;
+}
+.PopupActualizacionDatosCuenta_ladoDerecho{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+/**/
+
+.upload {
+    width: 100px;
+    position: relative;
+    margin: auto;
+    margin-left: 10px;
+}
+
+.upload img {
+    padding: 10px;
+    border-radius: 150px; 
+    background-color: rgba(254, 254, 254, 0.066);
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(224, 111, 111, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+}
+
+.upload .round {
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+    background-color: rgba(254, 254, 254, 0.066);
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    border-radius: 100%;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.upload .round input[type="file"] {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0; 
+    cursor: pointer;
+}
+
+.upload .round input[type='file'] {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+}
+
+input[type=file]::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+.inputGeneral {
+    width: 560px;
+    height: 60px;
+    background-color: #8f8f8f0a;
+    border: none;
+    border-radius: 30px;
+    box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    outline: none;
+    padding-left: 30px;
+    color: #fefefe;
+    font-size: 16px;
+    font-family: 'SFPro';
+    font-weight: 400;
+    letter-spacing: 0.8px;
+}
+
+.inputNombre, .inputPIN {
+    width: 80%;
+}
+
+.inputGeneral::placeholder {
+    color: #fefefe;
+    opacity: 0.7;
+    font-size: 16px;
+    font-family: 'SFPro';
+    font-weight: 400;
+    letter-spacing: 0.8px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.PopupActualizacionDatosCuenta_ladoDerecho{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    background-color: rgba(255, 0, 0, 0);
+    justify-content: center;
+}
+.botonActualizar{
+    width: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 150px;
+    box-shadow: inset 5px 2px 20px rgba(255, 255, 255, 0.641), inset 0px 2px 5px rgba(255, 255, 255, 0.422), 0px 2px 6px rgba(0, 0, 0, 0.066);
+    transition: 0.4s ease-in-out all;
+    background-color: #00ffae0c;
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    font-family: 'SFPro';
+    font-weight: bold;
+    font-style: bold;
+    letter-spacing: 2px;
+    font-size: 3.2vh;
+    color: rgba(255, 255, 255, 0.788);
+    border: 0px;
+    cursor: pointer;
+}
+.botonActualizar:hover{
+    background-color: #00ffae6a;
+}
+.ActualizarInfo{
+    font-size: 4vh;
+    position: absolute;
+    left: 20%;
+    margin-top: 40px;
+    color: rgb(240, 255, 248);
+}
+.cerrarPopUp{
+    transition: 0.4s ease-in-out all;
+    width: 50px;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: rgb(7, 7, 7);
+    font-family: 'SFPro';
+    font-weight: bold;
+    font-style: normal;
+    filter: drop-shadow(4px 5px 8px rgba(0, 0, 0, 0.179));
+}
+.cerrarPopUp:hover{
+    background-color: #00ffae6a;
+    filter: drop-shadow(4px 5px 8px rgba(0, 0, 0, 0));
+}
+/**/
+@keyframes resaltado {
+    0% {
+        fill: #07e0ad;
+    }
+
+    50% {
+        fill: #ffffff;
+    }
+
+    100% {
+        fill: #07e0ad;
+    }
 }
