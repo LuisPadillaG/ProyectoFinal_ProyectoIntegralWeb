@@ -14,10 +14,11 @@
         <nav>
             <ul>
                 <li class="logotipoBotonNavegacion"><img src="recursos/img/logotipo.png" alt=""></li>
-                <li class="perfilBotonNavegacion" onclick="IrDashboard('perfil')">
-                    <img src="recursos/img/plantilla_fotoprueba.png" alt="">Perfil
+                <li class="perfilBotonNavegacion"onclick="IrDashboard('perfil')">
+                    <img class="fotoNavBar" src="recursos/img/usuario_predeterminado.png" alt="">
+                    <span class="nombreNavBar">Cargando...</span>
                 </li>
-                <li class="albumesBotonNavegacion" onclick="IrDashboard('albumes')">Albumes</li>
+                <li class="albumesBotonNavegacion" onclick="IrDashboard('albumes')" >Albumes</li>
                 <li class="privadosBotonNavegacion" onclick="IrDashboard('privados')">Privados</li>
                 <li class="botongeneralModoOscuroClaro">
                     <div class="fondo_botongeneralModoOscuroClaro" id="btnModo">
@@ -32,9 +33,8 @@
     <section class="contenidoAlbumes">
         <div class="ContenedorContenidoAlbum">
             <div class="TituloAlbum">
-                <img class="TituloAlbumImagen" src="recursos/img/return_icon.png" alt=""
-                    onclick="Regresar()">
-                <h3>Recuerdos 2002 Titulo</h3>
+                <img class="TituloAlbumImagen" src="recursos/img/return_icon.png" alt="" onclick="IrDashboard('albumes')">
+                <h3 class="TituloAlbumTexto">Recuerdos 2002 Titulo</h3>
             </div>
             <div class="SubirFotos">
                 <label for="inputSubirFotos" class="DropArea">
@@ -73,7 +73,9 @@
         </div>
     </section>
 </body>
+
 <script src="js/album_individual.js"></script>
 <script src="js/subir_fotos.js"></script>
+<script src="js/subir_fotos_conexion.js"></script>
 
 </html>

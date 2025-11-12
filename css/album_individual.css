@@ -8,6 +8,7 @@
 ::view-transition-group(*){
     animation-duration: 2s;
 }
+
 body {
     margin: 0;
     height: 100vh;
@@ -110,7 +111,11 @@ body.modo-oscuro .Navegacion {
 .perfilBotonNavegacion img {
     width: 15%;
     border-radius: 150px;
+    aspect-ratio: 1/1;
+    object-fit: cover;      
+    object-position: center;
 }
+
 
 .botongeneralModoOscuroClaro {
     display: flex;
@@ -173,7 +178,7 @@ body.modo-oscuro .Navegacion {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: rgba(238, 130, 130, 0.253); 
+    background-color: #ee82e541; 
     display: flex;
     flex-wrap: nowrap;
     border-radius: 100px 100px 0px 0px;
@@ -237,13 +242,17 @@ body.modo-oscuro .Navegacion {
 }
 .InfoRecuerdo p{
     margin: 0;
-    color: rgb(85, 85, 85);
+    color: rgb(50, 50, 50);
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 1.3vw;
     background-color: rgba(255, 0, 0, 0);
+    transition: 0.4s all ease;
+}
+.modo-oscuro .InfoRecuerdo p{
+    color: rgb(223, 221, 221);
 }
 /* ------------------ */
 .buttoncompletoCrearAlbum{

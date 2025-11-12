@@ -42,35 +42,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 });
 
-/**--------------------------- pop up -------------------------------*/
 
-
-const PopUp_VisualizarFotoDeTurno = document.querySelector(".PopUp_VisualizarFotoDeTurno");
-const closePopUp = document.querySelector(".closePopUp");
-const recuerdos = document.querySelectorAll(".recuerdoIndividual");
-/**abrir */
-/**abrir */
-recuerdos.forEach(recuerdo => {
-    recuerdo.addEventListener('click', () => {
-        PopUp_VisualizarFotoDeTurno.classList.remove('slide-right', 'slide-left');
-        PopUp_VisualizarFotoDeTurno.style.display = 'block';
-        PopUp_VisualizarFotoDeTurno.classList.add('slide-left');
-
-        PopUp_VisualizarFotoDeTurno.addEventListener('animationend', (e) => {
-            if (e.animationName !== "slide-left") return; // <<< 🔥 filtro clave
-            PopUp_VisualizarFotoDeTurno.classList.remove('slide-left');
-        }, { once: true });
-    });
-});
-
-/**cerrar */
-closePopUp.addEventListener('click', ()=> {
-    PopUp_VisualizarFotoDeTurno.classList.remove('slide-right', 'slide-left');
-    PopUp_VisualizarFotoDeTurno.classList.add('slide-right');
-
-    PopUp_VisualizarFotoDeTurno.addEventListener('animationend', (e) => {
-        if (e.animationName !== "slide-right") return; // <<< 🔥 filtro clave
-        PopUp_VisualizarFotoDeTurno.classList.remove('slide-right');
-        PopUp_VisualizarFotoDeTurno.style.display = 'none';
-    }, { once: true });
-});

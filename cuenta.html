@@ -12,7 +12,7 @@
 
 <body>
     <section class="formularios">
-        <div class="cambioFormularios" >
+        <div class="cambioFormularios">
             <div class="crearCuenta" onclick="FormularioCrearCuenta()">
                 <h2>Crear</h2>
                 <h2>Cuenta</h2>
@@ -23,44 +23,56 @@
             </div>
         </div>
     </section>
-    <form action=""><section class="contentCrearCuenta">
-        <div class="picProfile_mas_nombre">
-            <div class="upload">
-                <img class="fotopreview" src="/recursos/img/usuario_predeterminado.png" alt="" width="100" height="100">
-                <div class="round">
-                    <input type="file" id="subirFoto">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path class="animado"
-                            d="M14.8285 12.0259L16.2427 13.4402L12 17.6828L7.7574 13.4402L9.17161 12.0259L11 13.8544V6.31724H13V13.8544L14.8285 12.0259Z"
-                            fill="#20C7A0" />
-                        <path class="animado" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M19.7782 19.7782C15.4824 24.0739 8.51759 24.0739 4.22183 19.7782C-0.0739417 15.4824 -0.0739417 8.51759 4.22183 4.22183C8.51759 -0.0739419 15.4824 -0.0739419 19.7782 4.22183C24.0739 8.51759 24.0739 15.4824 19.7782 19.7782ZM18.364 18.364C14.8492 21.8787 9.15076 21.8787 5.63604 18.364C2.12132 14.8492 2.12132 9.15076 5.63604 5.63604C9.15076 2.12132 14.8492 2.12132 18.364 5.63604C21.8787 9.15076 21.8787 14.8492 18.364 18.364Z"
-                            fill="#07e0ad" />
-                    </svg>
+    <form id="formCrearCuenta" enctype="multipart/form-data">
+        <section class="contentCrearCuenta">
+            <div class="picProfile_mas_nombre">
+                <div class="upload">
+                    <img class="fotopreview" src="recursos/img/usuario_predeterminado.png" alt="" width="100"
+                        height="100">
+                    <div class="round">
+                        <input type="file" name="imagen" id="subirFoto">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="animado"
+                                d="M14.8285 12.0259L16.2427 13.4402L12 17.6828L7.7574 13.4402L9.17161 12.0259L11 13.8544V6.31724H13V13.8544L14.8285 12.0259Z"
+                                fill="#20C7A0" />
+                            <path class="animado" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.7782 19.7782C15.4824 24.0739 8.51759 24.0739 4.22183 19.7782C-0.0739417 15.4824 -0.0739417 8.51759 4.22183 4.22183C8.51759 -0.0739419 15.4824 -0.0739419 19.7782 4.22183C24.0739 8.51759 24.0739 15.4824 19.7782 19.7782ZM18.364 18.364C14.8492 21.8787 9.15076 21.8787 5.63604 18.364C2.12132 14.8492 2.12132 9.15076 5.63604 5.63604C9.15076 2.12132 14.8492 2.12132 18.364 5.63604C21.8787 9.15076 21.8787 14.8492 18.364 18.364Z"
+                                fill="#07e0ad" />
+                        </svg>
+                    </div>
                 </div>
+                <input id="username" name="nombre" class="inputGeneral inputNombre" type="text"
+                    placeholder="Nombre de usuario" />
             </div>
-            <input id="username" name="nombre" class="inputGeneral inputNombre" type="text" placeholder="Nombre de usuario" />
+            <br><br>
+            <input id="correo" name="correo" class="inputGeneral" type="email" placeholder="Correo a registrar" />
+            <br><br><br>
+            <input id="contrasena" name="contraseña" class="inputGeneral" type="password"
+                placeholder="Nueva contraseña" />
+            <br><br><br>
+            <input type="number" name="PIN" class="inputGeneral inputPIN" maxlength="4"
+                oninput="if(this.value.length > 4) this.value = this.value.slice(0,4)"
+                placeholder="PIN Privado 4 digitos">
+        </section>
+        <div class="botonIniciar">
+            <button id="btnCrearCuenta" class="crearCuenta_submit" type="submit">Crear cuenta</button>
         </div>
-        <br><br>
-        <input id="correo" name="correo" class="inputGeneral" type="email" placeholder="Correo a registrar" />
-        <br><br><br>
-        <input id="contrasena" name="contraseña" class="inputGeneral" type="text" placeholder="Nueva contraseña" />
-        <br><br><br>
-        <input type="number" name="PIN" class="inputGeneral inputPIN" maxlength="4" oninput="if(this.value.length > 4) this.value = this.value.slice(0,4)"
-            placeholder="PIN Privado 4 digitos"> 
-    </section></form>
-    <section class="contentIniciarSesion"> 
-        <br><br>
-        <input id="username" name="correo" class="inputGeneral" type="email" placeholder="Inserte su correo" />
-        <br><br><br>
-        <input id="username" name="contraseña" class="inputGeneral" type="password" placeholder="Inserte su contraseña" />
-        <br><br><br>
-    </section>
-    <section class="botonIniciar">
-        <button>
-            INICIA
-        </button>
-    </section>
+    </form> 
+    <form id="formIniciarSesion" enctype="multipart/form-data">
+        <section class="contentIniciarSesion">
+            <br><br>
+            <input id="emailIniciarSesion" name="correo" class="inputGeneral" type="email"
+                placeholder="Inserte su correo" />
+            <br><br><br>
+            <input id="passwordIniciarSesion" name="contrasena" class="inputGeneral" type="password"
+                placeholder="Inserte su contraseña" />
+            <br><br><br>
+        </section>
+        <div class="botonIniciar">
+            <button type="submit" id="btnIniciarSesion" class="iniciarSesion_submit">Iniciar Sesión</button>
+        </div>
+    </form>
 </body>
-<script src="/js/iniciar_sesion.js"></script>
+<script src="js/iniciar_sesion.js"></script>
+
 </html>

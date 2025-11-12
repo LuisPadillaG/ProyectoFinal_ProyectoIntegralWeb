@@ -2,30 +2,25 @@
 /* Inicio de sfpro */
 @font-face {
   font-family: 'SFPro';
-  src: url(/recursos/fonts/SFPRODISPLAYBOLD.OTF);
+  src: url(../recursos/fonts/SFPRODISPLAYBOLD.OTF) format('opentype');
   font-weight: bold;
   font-style: bold;
 }
-
 @font-face {
   font-family: 'SFPro';
-  src: url(/recursos/fonts/SFPRODISPLAYBLACKITALIC.OTF);
+  src: url(../recursos/fonts/SFPRODISPLAYBLACKITALIC.OTF) format('opentype');
   font-weight: bolder;
   font-style: italic;
-
 }
 
 @font-face {
   font-family: 'SFPro';
-  src: url(/recursos/fonts/SFPRODISPLAYREGULAR.OTF);
-  font-weight: 400;
-  font-style: normal;
-
+  src: url(../recursos/fonts/SFPRODISPLAYREGULAR.OTF) format('opentype');
 }
 
 @font-face {
   font-family: 'SFPro';
-  src: url(/recursos/fonts/SFPRODISPLAYREGULAR.OTF);
+  src: url(../recursos/fonts/SFPRODISPLAYREGULAR.OTF) format('opentype');
   font-weight: 300;
   font-style: italic;
 

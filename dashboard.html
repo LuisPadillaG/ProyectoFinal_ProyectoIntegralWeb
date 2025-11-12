@@ -15,7 +15,8 @@
             <ul>
                 <li class="logotipoBotonNavegacion"><img src="recursos/img/logotipo.png" alt=""></li>
                 <li class="perfilBotonNavegacion" onclick="VisualizarPerfil()">
-                    <img src="recursos/img/plantilla_fotoprueba.png" alt="">Perfil
+                    <img class="fotoNavBar" src="recursos/img/usuario_predeterminado.png" alt="">
+                    <span class="nombreNavBar">Cargando...</span>
                 </li>
                 <li class="albumesBotonNavegacion" onclick="VisualizarAlbumes()">Albumes</li>
                 <li class="privadosBotonNavegacion" onclick="VisualizarPrivados()">Privados</li>
@@ -31,25 +32,25 @@
     </header>
     <section class="contenidoPerfil">
         <div class="contenidoInternoPerfil">
-            <img class="fotopreviewPerfil" src="/recursos/img/plantilla_fotoprueba.png" alt="" width="100" height="100">
+            <img class="fotopreviewPerfil" src="recursos/img/plantilla_fotoprueba.png" alt="" width="100" height="100">
             <div class="informacionPerfil">
-                <h3>Clara Generic User</h3>
-                <h3>claragenericmail@gmail.com</h3>
+                <h3 class="nombrePerfil">Cargando...</h3>
+                <h3 class="correoPerfil">Cargando...</h3>
                 <button class="botonesPerfil" onclick="AbrirPopUp()">Editar datos de cuenta</button>
-                <button class="botonesPerfil">Salir de cuenta</button>
+                <button class="botonesPerfil" onclick="SalirSesion()">Salir de cuenta</button>
             </div>
         </div>
     </section>
     <section class="contenidoAlbumes">
         <div class="ContenedorContenidoAlbum">
-            <div class="TarjetaAlbum">
+            <!--<div class="TarjetaAlbum">
                 <div class="colorTarjetaAlbum"></div>
                 <img class="menuHamburguesaTarjetaAlbum" src="recursos/img/burguer_menu_icon.png" alt="">
                 <div class="contenidoTarjetaAlbum">
                     <div class="imagenContenidoTarjetaAlbum"></div>
                     <h4 class="textoContenidoTarjetaAlbum">Recuerdos 2002</h4>
                 </div>
-            </div>
+            </div>-->
         </div>
         <div class="buttoncompletoCrearAlbum">
             <img src="recursos/img/plus_icon.png" alt="">
@@ -58,20 +59,21 @@
     </section>
     <section class="contenidoPrivados">
         <div class="VerificacionContenidoPrivado">
-            <h3>Ingrese su PIN de 4 digitos para ver su contenido</h3>
-            <input type="password" name="PIN" class="inputGeneral inputPIN" inputmode="numeric" pattern="\d{4}"
+            <h3 class="avisoVerificacion">Ingrese su PIN de 4 digitos para ver su contenido</h3>
+            <input type="password" name="PIN" class="inputGeneral inputPIN inputVerificacionContenidoPrivado" inputmode="numeric" pattern="\d{4}"
                 maxlength="4" minlength="4" required
                 oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4)">
+            <img class="VisualizarContenidoPrivado" src="recursos/img/go_icon.png" alt="">
         </div>
         <div class="ContenedorContenidoAlbum contenidoInternoPrivado">
-            <div class="TarjetaAlbum">
+            <!--<div class="TarjetaAlbum">
                 <div class="colorTarjetaAlbum"></div>
                 <img class="menuHamburguesaTarjetaAlbum" src="recursos/img/burguer_menu_icon.png" alt="">
                 <div class="contenidoTarjetaAlbum">
                     <div class="imagenContenidoTarjetaAlbum"></div>
                     <h4 class="textoContenidoTarjetaAlbum">Recuerdos 2002</h4>
                 </div>
-            </div>
+            </div>-->
         </div>
     </section>
     <!--Popups-->
@@ -80,7 +82,7 @@
             <div class="PopupActualizacionDatosCuenta_ladoIzquierdo">
                 <h2 class="ActualizarInfo">Actualizar datos de cuenta</h2>
                 <div class="upload">
-                    <img class="fotopreview" src="/recursos/img/usuario_predeterminado.png" alt="" width="100"
+                    <img class="fotopreview" src="recursos/img/usuario_predeterminado.png" alt="" width="100"
                         height="100">
                     <div class="round">
                         <input type="file" id="subirFoto">
@@ -96,11 +98,13 @@
                 </div>
                 <input id="username" name="nombre" class="inputGeneral inputNombre" type="text"
                     placeholder="Nuevo nombre de usuario" />
-                <input type="password" name="PIN" class="inputGeneral inputPIN" inputmode="numeric" pattern="\d{4}"
-                    maxlength="4" minlength="4" required placeholder="PIN Privado Anterior"
+
+                <input id="pin_actual" name="pin_actual" class="inputGeneral inputPIN" inputmode="numeric" maxlength="4"
+                    minlength="4" required placeholder="PIN Privado Anterior"
                     oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4)">
-                <input type="password" name="PIN" class="inputGeneral inputPIN" inputmode="numeric" pattern="\d{4}"
-                    maxlength="4" minlength="4" required placeholder="Nuevo PIN Privado"
+
+                <input id="pin_nuevo" name="pin_nuevo" class="inputGeneral inputPIN" inputmode="numeric" maxlength="4"
+                    minlength="4" required placeholder="Nuevo PIN Privado"
                     oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4)">
             </div>
             <div class="PopupActualizacionDatosCuenta_ladoDerecho">
@@ -117,7 +121,48 @@
             <h5 class="NotaPopUp">Presione cualquier lugar para cerrar</h5>
         </div>
     </div>
+    <div class="fondo_PopUpCrearAlbum">
+        <div class="PopUpCrearAlbum">
+            <img src="recursos/img/close_icon.png" alt="" class="cerrarPopUp" onclick="CerrarPopUpNuevoAlbum()">
+            <form onsubmit="CrearAlbum(event)">
+                <input id="name_new_album" name="nombre" class="inputGeneral inputNombre" type="text"
+                    placeholder="Nombre del album" />
+
+                <input id="descripcion_new_album" name="descripcion" class="inputGeneral inputNombre" type="text"
+                    placeholder="Descripcion" />
+
+                <label class="checkbox-label">
+                    <input id="privado" name="privado" type="checkbox" value="1">
+                    <span class="checkmark"></span>
+                    <span class="label-text">Convertir a privado</span>
+                </label>
+
+                <div class="colores">
+                    <div data-color="rojo" class="color_individual color_seleccionado">
+                        <div class="rojito"></div>
+                    </div>
+                    <div data-color="azul" class="color_individual">
+                        <div class="azulito"></div>
+                    </div>
+                    <div data-color="amarillo" class="color_individual">
+                        <div class="amarillito"></div>
+                    </div>
+                    <div data-color="verde" class="color_individual">
+                        <div class="verdecito"></div>
+                    </div>
+                    <div data-color="rosa" class="color_individual">
+                        <div class="rosita"></div>
+                    </div>
+                </div>
+
+                <button class="btnCrearAlbum" type="submit">Crear Album</button>
+            </form>
+        </div>
+    </div>
+
+
 </body>
-<script src="/js/dashboard.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/dashboard_conexion.js"></script>
 
 </html>

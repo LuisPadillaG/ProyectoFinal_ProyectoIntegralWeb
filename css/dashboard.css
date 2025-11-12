@@ -86,7 +86,6 @@ body.modo-oscuro .Navegacion {
 
 .logotipoBotonNavegacion img {
     width: 200px;
-
 }
 
 .perfilBotonNavegacion,
@@ -105,6 +104,9 @@ body.modo-oscuro .Navegacion {
 .perfilBotonNavegacion img {
     width: 15%;
     border-radius: 150px;
+    aspect-ratio: 1/1;
+    object-fit: cover;      
+    object-position: center;
 }
 
 .botongeneralModoOscuroClaro {
@@ -207,7 +209,7 @@ body.modo-oscuro .Navegacion {
     left: 0;
     top: 0;
     position: absolute;
-    background-color: #FF4545;
+    background-color: #b59fac;
     border-radius: 50px 0px 0px 50px;
     box-shadow:
         inset 1px 1px 5px rgba(255, 255, 255, 0.676),
@@ -220,6 +222,22 @@ body.modo-oscuro .Navegacion {
     backdrop-filter: blur(6px) saturate(110%);
     -webkit-backdrop-filter: blur(6px) saturate(100%);
 }
+.colorTarjetaAlbumROJO{
+    background-color: #FF4545;
+}
+.colorTarjetaAlbumAZUL{
+    background-color: #4589ff;
+}
+.colorTarjetaAlbumVERDE{
+    background-color: #45ff58;
+}
+.colorTarjetaAlbumAMARILLO{
+    background-color: #f1c832;
+}
+.colorTarjetaAlbumROSA{
+    background-color: #c432f1;
+}
+
 .menuHamburguesaTarjetaAlbum{
     z-index: 10;
     position: absolute;
@@ -245,22 +263,45 @@ body.modo-oscuro .Navegacion {
     left: 10%;
     width: 75%;
     aspect-ratio: 1 / 1;
-    background-image: url("/recursos/img/imagenPrueba.jpg");
+    /*background-image: url(../recursos/img/portadaAlbumPredeterminada.png);*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border-radius: 20px;
 }
-
+.imagenContenidoTarjetaAlbum img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      
+    object-position: center;
+    border-radius: 20px;
+}
 .textoContenidoTarjetaAlbum {
     font-size: 1.2em;
     font-weight: 400;
     font-style: normal;
-    color: #FF4545;
+    color: #b60896;
     position: absolute;
     bottom: 5%;
     left: 10%;
 }
+.textoContenidoTarjetaAlbumROJO{
+    color: #FF4545;
+}
+
+.textoContenidoTarjetaAlbumAMARILLO{
+    color: #f4b803;
+}
+.textoContenidoTarjetaAlbumVERDE{
+    color: #04c10b;
+}
+.textoContenidoTarjetaAlbumAZUL{
+    color: #086ab6;
+}
+.textoContenidoTarjetaAlbumROSA{
+    color: #b6089c;
+}
+
 .buttoncompletoCrearAlbum{
     position: absolute;
     bottom: 10%;
@@ -357,7 +398,30 @@ body.modo-oscuro .Navegacion {
     color: var(--color_secundario);
     font-size: 2em;
 }
-
+.VisualizarContenidoPrivado{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    padding: 10px;
+    background-color: var(--color_principal);
+    border-radius: 150px;
+    box-shadow:
+        inset 4px 4px 15px rgba(255, 255, 255, 0.82),
+    inset -4px -4px 15px rgba(255, 255, 255, 0.22),
+    inset 4px 6px 4px rgba(255, 255, 255, 0.55),
+    inset 4px 4px 15px rgba(255, 255, 255, 0.45),
+    inset 4px 4px 8px rgba(255, 255, 255, 0.22),
+    inset 15px 15px 40px rgba(255, 255, 255, 0.5),
+    0px 6px 25px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+    width: 60px;
+    transition: 0.3s ease;
+}
+.VisualizarContenidoPrivado:hover{
+    background-color: var(--color_secundario);
+    backdrop-filter: blur(16px) saturate(150%);
+}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -428,6 +492,8 @@ input[type=number] {
         0px 2px 8px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(6px) saturate(110%);
     -webkit-backdrop-filter: blur(6px) saturate(100%);
+    object-fit: cover;      
+    object-position: center;
 }
 .informacionPerfil{
     display: flex;
@@ -724,6 +790,198 @@ input[type=number] {
 .cerrarPopUp:hover{
     background-color: #00ffae6a;
     filter: drop-shadow(4px 5px 8px rgba(0, 0, 0, 0));
+}
+.fondo_PopUpCrearAlbum{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.477);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modo-oscuro .fondo_PopUpCrearAlbum{
+    background-color: #0b0b0bca;
+}
+.buttoncompletoCrearAlbum{
+    cursor: pointer;
+}
+.PopUpCrearAlbum{
+   width: 60%;
+   height: 70%;
+   background-color: rgba(15, 218, 93, 0.26);
+   box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    gap: 30px;
+}
+.PopUpCrearAlbum form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 30px;
+}
+/***/
+
+/* Estilo de la etiqueta */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Ocultar el checkbox original */
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Estilo del check visual */
+.checkmark {
+  width: 22px;
+  height: 22px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  border: 2px solid #ccc;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Cambia color al pasar el mouse */
+.checkbox-label:hover .checkmark {
+  border-color: #777;
+  background-color: #fafafa;
+}
+
+/* Cuando está marcado */
+.checkbox-label input:checked ~ .checkmark {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76,175,80,0.5);
+}
+
+/* El ícono del check (pseudo-elemento) */
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Mostrar la marca al estar seleccionado */
+.checkbox-label input:checked ~ .checkmark::after {
+  display: block;
+}
+
+/* Dibujar la palomita */
+.checkbox-label .checkmark::after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.color_seleccionado{
+    transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.489);
+  border: 0px solid #555;
+}
+/* Texto "Privado:" */
+.label-text {
+  color: #a8a8a8;
+  margin-left: 4px;
+  font-family: 'SFPro';
+  font-size: 1.2vw;
+  font-weight: 300;
+  font-style: italic;
+}
+.PopUpCrearAlbum .inputGeneral{
+    height: 100px;
+}
+/**/
+.colores{
+    width: 560px;
+    height: 30%;
+    background-color: rgba(0, 0, 255, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.color_individual{
+    height: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 150px;
+    
+    padding: 10px;
+   box-shadow:
+        inset 1px 1px 5px rgba(255, 255, 255, 0.676),
+        inset -1px -1px 5px rgba(255, 255, 255, 0.164),
+        inset 1px 2px 1px rgba(255, 255, 255, 0.507),
+        inset 1px 1px 5px rgba(255, 255, 255, 0.402),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.164),
+        inset 5px 5px 15px rgba(255, 255, 255, 0.454),
+        0px 2px 8px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+    
+}
+.rojito, .azulito, .verdecito, .rosita, .amarillito{
+    aspect-ratio: 1/1;
+    border-radius: 150px; 
+    background-color: red;
+    backdrop-filter: blur(6px) saturate(110%);
+    -webkit-backdrop-filter: blur(6px) saturate(100%);
+}
+.azulito{
+    background-color: #086ab6;
+}.verdecito{
+    background-color: #04c10b;
+}
+.amarillito{
+    background-color: #f4b803;
+}
+.rosita{
+    background-color: #c432f1;
+}
+
+.btnCrearAlbum{
+    margin-left: 60%;
+    background-color: var(--color_principal);
+    color: white;
+    border: none;
+    width: 40%;
+    font-size: 3vh;
+    padding: 10px 0px;
+    border-radius: 30px;
+    transition: 0.3s ease;
+    box-shadow: inset 4px 4px 10px white;
+}
+.btnCrearAlbum:hover{
+    background-color: var(--color_secundario);
 }
 /**/
 @keyframes resaltado {

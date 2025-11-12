@@ -1,5 +1,10 @@
 @import url("styles_general.css");
-
+@view-transition{
+    navigation: auto;
+}
+::view-transition-group(*){
+    animation-duration: 2s;
+}
 body {
     margin: 0;
     height: 100vh;
@@ -27,7 +32,7 @@ body::after {
     left: 15%;
     width: 70%;
     height: 100%;
-    background-image: url("/recursos/img/logotipo.png");
+    background-image: url(../recursos/img/logotipo.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -225,19 +230,18 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-.botonIniciar {
+.botonIniciar{
     width: 30%;
     position: absolute;
     height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 0, 0, 0);
     right: 10%;
-}
-
-.botonIniciar button {
+} 
+.botonIniciar button, .crearCuenta_submit, .iniciarSesion_submit {
     background-color: #20c7a030;
     width: 275px;
     height: 275px;
@@ -251,8 +255,12 @@ input[type=number] {
     border: 0px;
     box-shadow: inset 5px 2px 20px rgba(255, 255, 255, 0.189), inset 0px 2px 5px rgba(255, 255, 255, 0.422), 0px 2px 6px rgba(0, 0, 0, 0.066);
     transition: 0.4s ease-in-out all;
+    cursor: pointer;
+    z-index: 10;
 }
-
+.iniciarSesion_submit{
+    display: none;
+}
 .botonIniciar button:hover {
     background-color: #20c7a065;
     color: rgba(255, 255, 255, 0.639);

@@ -1,3 +1,6 @@
+function SalirSesion(){
+    window.location.href = "index.html";
+}
 const plantilla = document.querySelector("TarjetaAlbum");
 const contenedor = document.querySelector(".ContenedorCartas");
 //contenedor.innerHTML = "";
@@ -67,7 +70,7 @@ function VisualizarPrivados() {
     contenidoPrivados.classList.remove('blur-out', 'blur-in');
     contenidoInternoPrivado.classList.remove('blur-in', 'blur-out')
     VerificacionContenidoPrivado.classList.remove('scale-up-center', 'scale-down-center');
-    
+    VerificacionContenidoPrivado.style.display = 'flex'
     if (window.getComputedStyle(contenidoPerfil).display === "block") {
         contenidoPerfil.classList.add('blur-out')
         contenidoPerfil.addEventListener('animationend', () => {
@@ -78,6 +81,7 @@ function VisualizarPrivados() {
         }, { once: true });
     }
     if (window.getComputedStyle(contenidoAlbumes).display === "block") { 
+        VerificacionContenidoPrivado.style.display = 'flex'
         contenidoAlbumes.classList.add('blur-out')
         contenidoAlbumes.addEventListener('animationend', () => {
             contenidoAlbumes.style.display = 'none';
@@ -156,22 +160,6 @@ function AbrirPopUp(){
     PopupActualizacionDatosCuenta.classList.add('scale-up-center');
 }
 
-const fondo_Popup_DatosActualizadosCorrectamente = document.querySelector(".fondo_Popup_DatosActualizadosCorrectamente")
-const Popup_DatosActualizadosCorrectamente = document.querySelector(".Popup_DatosActualizadosCorrectamente")
-const Popup_DatosActualizadosCorrectamente_h2 = document.querySelector(".Popup_DatosActualizadosCorrectamente_h2");
-const NotaPopUp = document.querySelector(".NotaPopUp")
-function ActualizarDatos(){
-    fondo_Popup_DatosActualizadosCorrectamente.style.display = "flex";
-    Popup_DatosActualizadosCorrectamente_h2.classList.add('scale-up-center');
-    Popup_DatosActualizadosCorrectamente_h2.addEventListener('animationend', () =>{
-        NotaPopUp.style.opacity = '1'
-        Popup_DatosActualizadosCorrectamente_h2.classList.remove('scale-up-center');
-        Popup_DatosActualizadosCorrectamente_h2.addEventListener('click', ()=>{
-            fondo_PopupActualizacionDatosCuenta.style.display = 'none'
-            fondo_Popup_DatosActualizadosCorrectamente.style.display = 'none'
-        }, { once: true });
-    }, { once: true });
-}
 
 const defaultFile = "/recursos/img/usuario_predeterminado.png"
 
@@ -188,3 +176,48 @@ file.addEventListener('change', e => {
         img.src = defaultFile;
     }
 });
+
+const buttoncompletoCrearAlbum = document.querySelector('.buttoncompletoCrearAlbum')
+const PopUpCrearAlbum = document.querySelector(".PopUpCrearAlbum")
+const fondo_PopUpCrearAlbum = document.querySelector(".fondo_PopUpCrearAlbum")
+
+buttoncompletoCrearAlbum.addEventListener('click', ()=>{ 
+    fondo_PopUpCrearAlbum.style.display = 'flex'
+    PopUpCrearAlbum.classList.add('scale-up-center')
+    PopUpCrearAlbum.addEventListener('animationend', ()=>{
+        PopUpCrearAlbum.classList.remove("scale-up-center")
+    },{once: true});
+})
+
+
+function CerrarPopUpNuevoAlbum(){
+    PopUpCrearAlbum.classList.add("scale-down-center")
+    PopUpCrearAlbum.addEventListener('animationend', ()=>{
+        fondo_PopUpCrearAlbum.style.display = 'none'
+        PopUpCrearAlbum.classList.remove("scale-down-center")
+    },{once: true});
+}
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const colores = document.querySelectorAll(".color_individual");
+
+    colores.forEach(color => {
+      color.addEventListener("click", () => {
+        // Quita la clase color_seleccionado de todos
+        colores.forEach(c => c.classList.remove("color_seleccionado"));
+        
+        // Agrega la clase al color clickeado
+        color.classList.add("color_seleccionado");
+ 
+        let inputColor = document.querySelector("#color_seleccionado_input");
+        if (!inputColor) {
+          inputColor = document.createElement("input");
+          inputColor.type = "hidden";
+          inputColor.name = "color";
+          inputColor.id = "color_seleccionado_input";
+          document.querySelector("form").appendChild(inputColor);
+        }
+        inputColor.value = color.getAttribute("value");
+      });
+    });
+  });
